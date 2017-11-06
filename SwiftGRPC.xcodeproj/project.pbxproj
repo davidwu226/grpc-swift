@@ -494,7 +494,6 @@
 		5506D60C1FB09EA800BB333F /* tcp_client_windows.c in Sources */ = {isa = PBXBuildFile; fileRef = 5506CFC51FB09EA600BB333F /* tcp_client_windows.c */; };
 		5506D60D1FB09EA800BB333F /* tcp_posix.c in Sources */ = {isa = PBXBuildFile; fileRef = 5506CFC61FB09EA600BB333F /* tcp_posix.c */; };
 		5506D6101FB09EA800BB333F /* tcp_server_posix.c in Sources */ = {isa = PBXBuildFile; fileRef = 5506CFC91FB09EA600BB333F /* tcp_server_posix.c */; };
-		5506D6121FB09EA800BB333F /* tcp_server_utils_posix_common.c in Sources */ = {isa = PBXBuildFile; fileRef = 5506CFCB1FB09EA600BB333F /* tcp_server_utils_posix_common.c */; };
 		5506D6131FB09EA800BB333F /* tcp_server_utils_posix_ifaddrs.c in Sources */ = {isa = PBXBuildFile; fileRef = 5506CFCC1FB09EA600BB333F /* tcp_server_utils_posix_ifaddrs.c */; };
 		5506D6141FB09EA800BB333F /* tcp_server_utils_posix_noifaddrs.c in Sources */ = {isa = PBXBuildFile; fileRef = 5506CFCD1FB09EA600BB333F /* tcp_server_utils_posix_noifaddrs.c */; };
 		5506D6151FB09EA800BB333F /* tcp_server_uv.c in Sources */ = {isa = PBXBuildFile; fileRef = 5506CFCE1FB09EA600BB333F /* tcp_server_uv.c */; };
@@ -509,7 +508,6 @@
 		5506D6261FB09EA800BB333F /* udp_server.c in Sources */ = {isa = PBXBuildFile; fileRef = 5506CFDF1FB09EA600BB333F /* udp_server.c */; };
 		5506D6281FB09EA800BB333F /* unix_sockets_posix.c in Sources */ = {isa = PBXBuildFile; fileRef = 5506CFE11FB09EA600BB333F /* unix_sockets_posix.c */; };
 		5506D62A1FB09EA800BB333F /* unix_sockets_posix_noop.c in Sources */ = {isa = PBXBuildFile; fileRef = 5506CFE31FB09EA600BB333F /* unix_sockets_posix_noop.c */; };
-		5506D62B1FB09EA800BB333F /* wakeup_fd_cv.c in Sources */ = {isa = PBXBuildFile; fileRef = 5506CFE41FB09EA600BB333F /* wakeup_fd_cv.c */; };
 		5506D62D1FB09EA800BB333F /* wakeup_fd_eventfd.c in Sources */ = {isa = PBXBuildFile; fileRef = 5506CFE61FB09EA600BB333F /* wakeup_fd_eventfd.c */; };
 		5506D62E1FB09EA800BB333F /* wakeup_fd_nospecial.c in Sources */ = {isa = PBXBuildFile; fileRef = 5506CFE71FB09EA600BB333F /* wakeup_fd_nospecial.c */; };
 		5506D62F1FB09EA800BB333F /* wakeup_fd_pipe.c in Sources */ = {isa = PBXBuildFile; fileRef = 5506CFE81FB09EA600BB333F /* wakeup_fd_pipe.c */; };
@@ -639,6 +637,8 @@
 		5506D7021FB09EA900BB333F /* pb_encode.c in Sources */ = {isa = PBXBuildFile; fileRef = 5506D0D21FB09EA600BB333F /* pb_encode.c */; };
 		5506D7061FB09FE600BB333F /* CgRPC.h in Headers */ = {isa = PBXBuildFile; fileRef = 5506CBB41FB09EA500BB333F /* CgRPC.h */; };
 		5506D7101FB0AFC700BB333F /* SwiftGRPC.h in Headers */ = {isa = PBXBuildFile; fileRef = 5506D70E1FB0AF2900BB333F /* SwiftGRPC.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5506D7131FB0BA8200BB333F /* wakeup_fd_cv.c in Sources */ = {isa = PBXBuildFile; fileRef = 5506CFE41FB09EA600BB333F /* wakeup_fd_cv.c */; };
+		5506D7141FB0BA8600BB333F /* tcp_server_utils_posix_common.c in Sources */ = {isa = PBXBuildFile; fileRef = 5506CFCB1FB09EA600BB333F /* tcp_server_utils_posix_common.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -2516,11 +2516,11 @@
 		5506CBB21FB09EA500BB333F /* CgRPC */ = {
 			isa = PBXGroup;
 			children = (
-				5506CBB31FB09EA500BB333F /* include */,
-				5506CE5C1FB09EA600BB333F /* README.md */,
 				5506CE5D1FB09EA600BB333F /* shim */,
 				5506CE6C1FB09EA600BB333F /* src */,
 				5506D0CB1FB09EA600BB333F /* third_party */,
+				5506CBB31FB09EA500BB333F /* include */,
+				5506CE5C1FB09EA600BB333F /* README.md */,
 			);
 			name = CgRPC;
 			path = Sources/CgRPC;
@@ -3831,8 +3831,6 @@
 			files = (
 				5506D55D1FB09EA800BB333F /* chttp2_server.c in Sources */,
 				5506D1491FB09EA600BB333F /* ec.c in Sources */,
-				5506D6121FB09EA800BB333F /* tcp_server_utils_posix_common.c in Sources */,
-				5506D62B1FB09EA800BB333F /* wakeup_fd_cv.c in Sources */,
 				5506D5B01FB09EA800BB333F /* endpoint.c in Sources */,
 				5506D6AC1FB09EA800BB333F /* tmpfile_msys.c in Sources */,
 				5506D5A71FB09EA800BB333F /* httpcli.c in Sources */,
@@ -3862,6 +3860,7 @@
 				5506D5F31FB09EA800BB333F /* resource_quota.c in Sources */,
 				5506D58A1FB09EA800BB333F /* writing.c in Sources */,
 				5506D6EE1FB09EA900BB333F /* grpc_plugin_registry.c in Sources */,
+				5506D7131FB0BA8200BB333F /* wakeup_fd_cv.c in Sources */,
 				5506D6D01FB09EA900BB333F /* validate_metadata.c in Sources */,
 				5506D4F01FB09EA800BB333F /* initialize.c in Sources */,
 				5506D6A11FB09EA800BB333F /* thd.c in Sources */,
@@ -4449,6 +4448,7 @@
 				5506D6D91FB09EA900BB333F /* error_utils.c in Sources */,
 				5506D10F1FB09EA600BB333F /* generic.c in Sources */,
 				5506D1131FB09EA600BB333F /* montgomery_inv.c in Sources */,
+				5506D7141FB0BA8600BB333F /* tcp_server_utils_posix_common.c in Sources */,
 				5506D1761FB09EA600BB333F /* ofb.c in Sources */,
 				5506D1F81FB09EA600BB333F /* v3_prn.c in Sources */,
 				5506D1A51FB09EA600BB333F /* a_digest.c in Sources */,
@@ -4517,10 +4517,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
-				);
+				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_C_LANGUAGE_STANDARD = "compiler-default";
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -4536,9 +4533,8 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(SRCROOT)/Sources/CgRPC/include",
 					"$(SRCROOT)/Sources/BoringSSL/include",
+					"$(SRCROOT)/Sources/CgRPC/include",
 				);
 				INFOPLIST_FILE = "Sources/Info-iOS.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -4599,10 +4595,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
-				);
+				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_C_LANGUAGE_STANDARD = "compiler-default";
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -4612,9 +4605,8 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(SRCROOT)/Sources/CgRPC/include",
 					"$(SRCROOT)/Sources/BoringSSL/include",
+					"$(SRCROOT)/Sources/CgRPC/include",
 				);
 				INFOPLIST_FILE = "Sources/Info-iOS.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
