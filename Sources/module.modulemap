@@ -1,0 +1,7 @@
+framework module SwiftGRPC {
+  umbrella header "SwiftGRPC.h"
+
+  export *
+  module * { export * }
+}
+
